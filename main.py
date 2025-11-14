@@ -135,7 +135,7 @@ def create_dataset_stft(file_path):
 
 
 # Process the TIMIT dataset
-target_folder = r'E:\Raw Data\VCTK_16kHz\train\clean'
+target_folder = r'DSET\train\clean'
 
 
 drfolders = os.listdir(target_folder)
@@ -325,4 +325,4 @@ plt.show()
 test_loss, test_mae = model.evaluate(Xq_test_windowed, y_test_windowed)
 print(f"Test Loss: {test_loss}, Test MAE: {test_mae}")
 
-model.save('Model_TDDLSTM_VCTK.keras')
+model.save('Model_L_0.keras')

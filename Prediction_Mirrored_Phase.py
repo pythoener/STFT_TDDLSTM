@@ -152,7 +152,7 @@ def create_dataset_stft(file_path):
    Low_STFT_FEATURES_PHASE.extend(low_stft_phase.T)
 
 # Process the TIMIT dataset
-target_folder = r'E:\Raw Data\TIMIT_BWE_SF\01_Train\OriginalHigh\dr1\fcjf0'
+target_folder = r'DSET\train\clean'
 
 drfolders = os.listdir(target_folder)
 
@@ -348,7 +348,7 @@ def processfile(file_path):
         pesq_score = pesq(fs, originalAudio, reconstructed_audio, 'wb')
         print(f'STOI: {stoi_score}, PESQ: {pesq_score}')
 
-        save_audio(reconstructed_audio, file_path, r'C:\Users\HPC3\PycharmProjects\mert\STFT_TDDLSTM\Results', fs)
+        save_audio(reconstructed_audio, file_path, r'RSLTS\predicted', fs)
 
         if pesq_score > best_pesq_score:
             best_pesq_score = pesq_score
@@ -364,8 +364,8 @@ def processfile(file_path):
     except Exception as e:
         print(f"Error processing file {file_path}: {e}")
 
-test_folder = r'E:\Raw Data\TIMIT_BWE_SF\04_test_clean\OriginalHigh'
-test_folder_low = r'E:\Raw Data\TIMIT_BWE_SF\04_test_clean\Upsampled'
+test_folder = r'DSET\test\clean'
+test_folder_low = r'DSET\test\upsampled'
 
 results = []
 
